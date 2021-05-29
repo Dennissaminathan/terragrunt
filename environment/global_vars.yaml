@@ -1,0 +1,15 @@
+# This config file contains variables that are global to all the environments
+# Reference: https://terragrunt.gruntwork.io/docs/features/locals/#including-globally-defined-locals
+
+default:
+  aws_provider_version: 2.66.0
+  aws_region: "eu-west-3"
+  # default CIDR  for all load balancers
+  load_balancers_inbound_cidrs : ["0.0.0.0/0"]
+  # tag and value used to identify that resource should be backed up by AWS Backup Service
+
+# global contains variables that are global for all the resources used
+common:
+  tags:
+    creator: terraform
+
